@@ -139,14 +139,12 @@ module.exports = class PlayHeroesModal extends ModalView
       ]
     else
       @codeLanguageList = [
-        {id: 'python', name: "Python (#{$.i18n.t('choose_hero.default')})"}
+        {id: 'lua', name: "Lua (#{$.i18n.t('choose_hero.experimental')})"}
         {id: 'javascript', name: 'JavaScript'}
+        {id: 'python', name: "Python"}
+        {id: 'java', name: "Java (#{$.i18n.t('choose_hero.experimental')})"}
         {id: 'coffeescript', name: "CoffeeScript (#{$.i18n.t('choose_hero.experimental')})"}
       ]
-
-      if me.isAdmin() or not application.isProduction()
-        @codeLanguageList.push {id: 'java', name: "Java (#{$.i18n.t('choose_hero.experimental')})"}
-        @codeLanguageList.push {id: 'lua', name: "Lua (#{$.i18n.t('choose_hero.experimental')})"}
 
   onHeroChanged: (e) ->
     direction = e.direction  # 'left' or 'right'
